@@ -12,6 +12,6 @@ format and submit those inputs to an ESRI geoprocessing service
 disply a busy signal to the user while waiting for response
 display approriate message to the user on response and update the map with an X/Y location
 
-the associated geoprocessing tool source code is available here: (tbd)
+the associated geoprocessing tool source code is available here: https://github.com/erghjunk/esri-ArcPy-logisticsBackEnd
 
 and the live geoprocessing service itself is here: https://appservices.wvgis.wvu.edu/arcgis/rest/services/CRC/CRCTool/GPServer/turnrow%20logistics%20sharing%20tool/
