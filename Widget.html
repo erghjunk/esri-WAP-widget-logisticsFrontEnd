@@ -1,0 +1,53 @@
+<div>
+	<h1>Logistics Sharing Tool (v0.1)</h1>
+	<br>
+	
+	<div class="descrip">
+		<p>${nls.description} It is maintained by <a href="http://www.turnrowfarms.org/">Turnrow Appalachian Farm Collective</a>.</p> 
+		<br>
+		<p>To get started, input the following information in the form below:  a delivery address, a due date, and a quantity of either cases (1 1/9 bu boxes) or pallets (~40 cases on a pallet).</p>
+	</div><br>
+	<div data-dojo-attach-point="loadingNode" class="loading"></div>
+	<div id="returnDiv"></div>
+	<div class="data_entry">
+		<form>	
+			<br>
+			<label for="destA">Address</label><br>
+			<input type="text" id="destA" tabindex="1" placeholder="123 Pleasant Street">
+			<br>
+			<label for="destC">City</label><br>
+			<input type="text" id="destC" tabindex="2" placeholder="Morgantown">
+			<br>
+			<label for="destS">State</label><br>
+			<select name="State" id="destS" tabindex="3">
+				<option value="WV">WV</option>
+				<option value="GA">GA</option>
+				<option value="IN">IN</option>
+				<option value="KY">KY</option>
+				<option value="MD">MD</option>
+				<option value="NC">NC</option>
+				<option value="PA">PA</option>
+				<option value="SC">SC</option>
+				<option value="VA">VA</option>
+			</select>
+			<br>
+			<label for="destZ">Zip Code</label><br>
+			<input type="text" id="destZ" placeholder="26505" tabindex="4">
+			<br>
+			<label for="delivByDate">Deliver By</label><br>
+			<input type="date" id="delivByDate" tabindex="5">
+			<br>
+			<label for="quantity">Quantity</label><br>
+			<input type="number" id="quantity" placeholder="2" tabindex="6"><br>
+			<label for="unit">Unit</label><br>
+			<select name="Units", id="unit" tabindex="7">
+				<option value="cases">cases</option>
+				<option value="pallets">pallets</option>
+			</select>
+		</form>	
+	</div>
+	<div>
+	<input type="button" value="Submit" data-dojo-attach-event="click:logisticsGP" tabindex="8">
+	<br>
+	</div>
+</div>

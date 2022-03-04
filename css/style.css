@@ -1,0 +1,78 @@
+.logshare .descrip {
+	/*font-weight: bold;*/
+	color: green;
+	}
+
+.route {
+	color: black;
+	padding: 10px 10px 10px 1px;
+	text-align: left;
+	outline: 1px solid #FFFFFF;
+	outline-offset: 1px;
+	font-size: 16px;
+}
+
+.address {
+	color: black;
+	font-weight: bold;
+	padding: 10px 10px 10px 1px;
+	text-align: left;
+	outline: 1px solid #FFFFFF;
+	outline-offset: 1px;
+	font-size: 16px;
+}
+
+.error {
+	font-size: 16px;
+	color: red;
+	font-weight: bold;
+}
+
+label {
+	font-weight: bold;
+}
+
+select {
+	margin: 8px 0;
+	padding:8px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  width: 30%;
+}
+
+input[type=text] {
+	width: 100%;
+  margin: 8px 0;
+  box-sizing: border-box;
+  padding:8px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=date] {
+	width: 100%;
+  margin: 8px 0;
+  box-sizing: border-box;
+  padding:8px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=number] {
+	width: 100%;
+  margin: 8px 0;
+  box-sizing: border-box;
+  padding:8px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=button] {
+  background-color: #7E7F7F; /* gray */
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;s
+}

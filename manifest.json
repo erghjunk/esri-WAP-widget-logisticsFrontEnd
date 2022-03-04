@@ -1,0 +1,20 @@
+{
+  "name": "Logistics Sharing",
+  "platform": "HTML",
+  "version": "0.1",
+  "wabVersion": "0.2",
+  "author": "Downstream Strategies/Evan Fedorko",
+  "description": "Logistics Sharing Tool for Central Appalachian Food Hubs",
+  "copyright": "",
+  "dependency": [
+    "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
+  ],
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {
+    "hasConfig": false,
+    "hasStyle": true,
+    "hasLocale": true,
+    "hasUIFile": true,
+    "hasSettingPage": false
+  }
+}
