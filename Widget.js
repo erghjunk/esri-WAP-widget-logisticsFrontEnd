@@ -26,11 +26,11 @@ define(['dojo/_base/declare',
     'jimu/zoomToUtils',
     'jimu/dijit/LoadingIndicator',
     'esri/geometry/Point', 
-    'esri/SpatialReference',
-    'esri/symbols/SimpleMarkerSymbol', 
+    'esri/SpatialReference', 
+    'esri/symbols/PictureMarkerSymbol',
     'esri/graphic'
 ],
-function(declare, BaseWidget, html, Deferred, all, dom, lang, Geoprocessor, on, esriRequest, zoomToUtils, loadingIndicator, esriPoint, esriSpatialRef, esriSimpleMarker, esriGraphic) {
+function(declare, BaseWidget, html, Deferred, all, dom, lang, Geoprocessor, on, esriRequest, zoomToUtils, loadingIndicator, esriPoint, esriSpatialRef, esriPictureMarker, esriGraphic) {
   
   var clazz = declare([BaseWidget], {
     
@@ -150,9 +150,9 @@ function(declare, BaseWidget, html, Deferred, all, dom, lang, Geoprocessor, on, 
           var divId = 'div' + iString;
           var div = dojo.create('div', {id: divId, class: 'route'}, node); //needs a div class for CSS purposes
           if (data.message[i].capacity.length == 0) {
-            var returnMessage = 'For delivery on ' + data.message[i].delivDate + ', deliver products to ' + data.message[i].partnerName + ' no later than ' + data.message[i].aggDate + '. ' + data.message[i].distanceMessage + ' Contact them to arrange final details: ' + data.message[i].partnerPOC + '; ' + data.message[i].partnerAddress + '; ' + data.message[i].partnerPhone + '; ' + data.message[i].partnerEmail;
+            var returnMessage = 'For delivery on ' + data.message[i].delivDate + ', deliver products to ' + data.message[i].partnerName + ' no later than noon on ' + data.message[i].aggDate + '. ' + data.message[i].distanceMessage + ' Contact them to arrange final details: ' + data.message[i].partnerPOC + '; ' + data.message[i].partnerAddress + '; ' + data.message[i].partnerPhone + '; ' + data.message[i].partnerEmail;
           } else { // end of inner if, start of inner else
-            var returnMessage = data.message[i].capacity + ' For delivery on ' + data.message[i].delivDate + ', deliver products to ' + data.message[i].partnerName + ' no later than ' + data.message[i].aggDate + '. ' + data.message[i].distanceMessage + ' Contact them to arrange final details: ' + data.message[i].partnerPOC + '; ' + data.message[i].partnerAddress + '; ' + data.message[i].partnerPhone + '; ' + data.message[i].partnerEmail;
+            var returnMessage = data.message[i].capacity + ' For delivery on ' + data.message[i].delivDate + ', deliver products to ' + data.message[i].partnerName + ' no later than noon on ' + data.message[i].aggDate + '. ' + data.message[i].distanceMessage + ' Contact them to arrange final details: ' + data.message[i].partnerPOC + '; ' + data.message[i].partnerAddress + '; ' + data.message[i].partnerPhone + '; ' + data.message[i].partnerEmail;
           } // end of inner if else
           div.innerHTML = returnMessage;
           var destination = [data.destX, data.destY];
@@ -168,21 +168,16 @@ function(declare, BaseWidget, html, Deferred, all, dom, lang, Geoprocessor, on, 
     mapMoveAndDraw: function(location){
       this.map.centerAndZoom(location, 12);
       var point = new esriPoint(location, new esriSpatialRef({wkid:4326}));
-      var simpleMarkSymbol = new esriSimpleMarker({
-        "color": [255, 0, 0, 1],
-        "size": 20,
-        "xoffset": 0,
-        "yoffset": 0,
-        "type": "esriSMS",
-        "style": "esriSMSX",
-        "outline": {
-          "color": [0,0,0,255],
-          "width": 1,
-          "type": "esriSLS",
-          "style": "esriSLSSolid"
-        }
+      var pictureSymbol = new esriPictureMarker({
+        "type" : "esriPMS",
+        "url" : "widgets/LogisticsSharing/images/destination.png",
+        "contentType" : "image/png",
+        "width" : 40,
+        "height" : 40,
+        "xoffset" : 0,
+        "yoffset" : 8
       });
-      var graphic = new esriGraphic(point, simpleMarkSymbol);
+      var graphic = new esriGraphic(point, pictureSymbol);
       this.map.graphics.add(graphic);
     }
   }); // end of master constructor
